@@ -56,7 +56,7 @@ brew install ffmpeg
 
 # Install casks to sensible locations
 brew tap caskroom/cask 
-brew tap caskroom/versions
+# brew tap caskroom/versions
 
 brew cask install iterm2
 brew cask install macvim
@@ -74,9 +74,10 @@ brew cask install the-unarchiver
 brew cask install appcleaner
 brew cask install atom
 
+brew cask install java
 brew cask install eclipse-java
 brew cask install intellij-idea-ce
-brew cask install sophos-anti-virus-home-edition
+
 brew cask install dash
 brew cask install google-drive
 brew cask install kitematic
