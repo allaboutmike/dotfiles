@@ -11,18 +11,27 @@ fi
 
 # Update homebrew recipes
 brew update
-brew upgrade
+
+brew upgrade --all
 
 brew tap homebrew/dupes
 
-# Note: update .bash_profile with PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+# Don't forget to add `$(brew --prefix coreutils)/libexec/gnubin` to
+# the `$PATH`
 brew install coreutils
+brew install moreutils
 brew install findutils
-# Note: Add /usr/local/bin/bash to /etc/shells
+# Note: Add /usr/local/bin/bash to /etc/shells before running `chsh`
 brew install bash
-brew install bash-completion
+brew tap homebrew/versions
+brew install bash-completion2
 
-# More recent versions of OS X tools
+if ! fgreg -q '/usr/local/bin/bash' /etc/shells; then
+	echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+	chsh -s /usr/local/bin/bash;
+fi;
+
+# More recent versions of macOS tools
 brew install vim --override-system-vi
 brew install wget --with-iri
 brew install homebrew/dupes/openssh
@@ -56,7 +65,7 @@ brew install ffmpeg
 
 # Install casks to sensible locations
 brew tap caskroom/cask 
-# brew tap caskroom/versions
+brew tap caskroom/versions
 
 brew cask install iterm2
 brew cask install macvim
