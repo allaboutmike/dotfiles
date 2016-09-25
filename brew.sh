@@ -21,6 +21,8 @@ brew tap homebrew/dupes
 brew install coreutils
 brew install moreutils
 brew install findutils
+brew install gnu-sed --with-default-names
+
 # Note: Add /usr/local/bin/bash to /etc/shells before running `chsh`
 brew install bash
 brew tap homebrew/versions
@@ -39,8 +41,9 @@ brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
 brew install homebrew/dupes/php55 --with-gmp
 
+# Javascript stuff
+brew install node
 brew install ringojs
-brew install narwhal
 brew install rhino
 
 # Java stuffs
@@ -84,14 +87,13 @@ brew cask install appcleaner
 brew cask install atom
 
 brew cask install java
-brew cask install eclipse-java
+#brew cask install eclipse-java
 brew cask install intellij-idea-ce
 
 brew cask install dash
 brew cask install google-drive
-brew cask install kitematic
-
 brew cask install geektool
+
 brew cleanup
 brew cask cleanup
 

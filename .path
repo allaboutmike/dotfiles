@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Adding GNU CoreUtils from Homebrew
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
 # Add /usr/local/sbin for homebrew files
 export PATH="/usr/local/sbin:$PATH";
 
