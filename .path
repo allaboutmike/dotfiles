@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Add /usr/local/sbin for homebrew files
+export PATH="/usr/local/sbin:$PATH";
+
+# Add the ~/bin folder to the path
+export PATH="$HOME/bin:$PATH";
+
