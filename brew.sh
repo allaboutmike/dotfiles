@@ -28,7 +28,7 @@ brew install bash
 brew tap homebrew/versions
 brew install bash-completion2
 
-if ! fgreg -q '/usr/local/bin/bash' /etc/shells; then
+if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
 	echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
 	chsh -s /usr/local/bin/bash;
 fi;
@@ -39,7 +39,6 @@ brew install wget --with-iri
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
-brew install homebrew/dupes/php55 --with-gmp
 
 # Javascript stuff
 brew install node
@@ -58,7 +57,7 @@ brew install lua
 brew install python
 brew install python3
 # To support pygame
-brew install sdl sdl_image sdl_mixer sdl_tff portmidi
+brew install sdl sdl_image sdl_mixer portmidi
 
 # Go lang stuffs
 brew install go --cross-compile-common
