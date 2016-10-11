@@ -2,6 +2,7 @@
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	lg = log --oneline --graph --color --decorate # Short log
 
 	# View the current working tree status using the short format
 	s = status -s
@@ -18,11 +19,28 @@
 	# Clone a repository including all submodules
 	c = clone --recursive
 
+	# Checkout shortcut
+	co = checkout
+	# Checkout branch
+	cob = checkout -b
+
 	# Commit all changes
 	ca = !git add -A && git commit -av
-	
+
+	# Edit configuration
+	ec = config --global -e
+
+	# Git up - update all branches
+	up = !git pull --rebase --prune $@
+
+	# Wipe my changes (with savepoint)
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1
+
 	# Push to HEAD
 	poh = push origin HEAD
+
+	# Clean all merged branches
+	bclean = "!f() { git branch --merged ${1-develop} | grep -v "${1-develop}" | xargs -r git branch -d; }; f"
 
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
@@ -183,3 +201,6 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[user]
+	name = Mike B
+	email = bowman.michael@gmail.com
