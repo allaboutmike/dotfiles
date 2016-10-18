@@ -59,6 +59,9 @@ brew install python3
 # To support pygame
 brew install sdl sdl_image sdl_mixer portmidi
 
+# Database stuffs
+brew install mysql
+
 # Go lang stuffs
 brew install go --cross-compile-common
 
