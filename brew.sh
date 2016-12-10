@@ -56,6 +56,9 @@ brew install lua
 # Python stuffs
 brew install python
 brew install python3
+brew install pyenv
+brew install pyenv-virtualenv
+
 # To support pygame
 brew install sdl sdl_image sdl_mixer portmidi
 
@@ -89,7 +92,7 @@ brew cask install appcleaner
 brew cask install atom
 
 brew cask install java
-#brew cask install eclipse-java
+brew cask install eclipse-java
 brew cask install intellij-idea-ce
 
 brew cask install dash

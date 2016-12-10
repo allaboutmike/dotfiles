@@ -201,6 +201,3 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-[user]
-	name = Mike B
-	email = bowman.michael@gmail.com

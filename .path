@@ -9,3 +9,7 @@ export PATH="/usr/local/sbin:$PATH";
 # Add the ~/bin folder to the path
 export PATH="$HOME/bin:$PATH";
 
+# Evaluate the pyenv shims
+eval "$(pyenv init -)";
+eval "$(pyenv virtualenv-init -)";
+
