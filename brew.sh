@@ -40,6 +40,9 @@ brew install homebrew/dupes/openssh
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
 
+# Misc stuff
+brew install m-cli
+
 # Javascript stuff
 brew install node
 brew install ringojs
