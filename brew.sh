@@ -12,9 +12,8 @@ fi
 # Update homebrew recipes
 brew update
 
-brew upgrade --all
-
-brew tap homebrew/dupes
+# Upgrade any already-installed formulae.
+brew upgrade
 
 # Don't forget to add `$(brew --prefix coreutils)/libexec/gnubin` to
 # the `$PATH`
@@ -49,6 +48,19 @@ brew install ringojs
 brew install rhino
 
 # Java stuffs
+# Install more recent versions of some macOS tools.
+brew install vim --with-override-system-vi
+brew install homebrew/dupes/grep
+brew install homebrew/dupes/openssh
+brew install homebrew/dupes/screen
+brew install homebrew/php/php56 --with-gmp
+
+# Install font tools.
+brew tap bramstein/webfonttools
+brew install sfnt2woff
+brew install sfnt2woff-zopfli
+brew install woff2
+
 brew install ack
 brew install maven
 brew install git
