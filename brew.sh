@@ -41,6 +41,7 @@ brew install homebrew/dupes/screen
 
 # Misc stuff
 brew install m-cli
+brew install mas
 
 # Javascript stuff
 brew install node
