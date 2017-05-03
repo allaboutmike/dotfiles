@@ -102,6 +102,7 @@ brew cask install vlc
 brew cask install flux
 brew cask install virtualbox
 brew cask install vagrant
+brew cask install docker
 
 brew cask install the-unarchiver
 brew cask install appcleaner
