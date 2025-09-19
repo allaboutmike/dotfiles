@@ -37,13 +37,13 @@
 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1
 
 	# Push to HEAD
-	poh = push origin HEAD
+	poh = push -u origin HEAD
 
 	# Clean all merged branches
 	bclean = "!f() { git branch --merged ${1-develop} | grep -v "${1-develop}" | xargs -r git branch -d; }; f"
 
 	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	go = "!f() { git switch -c \"$1\" 2> /dev/null || git switch \"$1\"; }; f"
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
@@ -76,7 +76,10 @@
 
 	# Remove branches that have already been merged with master
 	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	# dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	dm = "!f() { for branch in $(git for-each-ref --format '%(if:equals=gone)%(upstream:track,nobracket)%(then)%(refname:short)%(end)' refs/heads/); do git branch -D $branch; done }; f"
+
+	lb = "!git branch -l"
 
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
@@ -181,6 +184,8 @@
 	followTags = true
 
 # URL shorthands
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
 
 [url "git@github.com:"]
 
@@ -201,3 +206,5 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[pull]
+	rebase = true
